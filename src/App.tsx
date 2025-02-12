@@ -1,6 +1,8 @@
 import '@/styles/app.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import { MagicUIDemo } from './components/MagicUIDemo'
+import { UIDemo } from './components/UIDemo';
 
 function App() {
 
@@ -13,6 +15,9 @@ function App() {
       <main className="main-content">
         <h2>Welcome to My Website</h2>
         <p>This is the main content of the page.</p>
+        <span className='text-red-500'>Hello, World!</span>
+        <MagicUIDemo />
+        <UIDemo />
       </main>
 
       {/* Footer 组件 */}
