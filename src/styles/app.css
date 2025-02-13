@@ -1,29 +1,29 @@
 /* 全局样式 */
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-  }
-  
-  /* App 容器 */
-  .app {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh; /* 使页面占满整个视口高度 */
-  }
-  
-  /* 主要内容区域 */
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+
+/* App 容器 */
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* 使页面占满整个视口高度 */
+}
+
+/* 主要内容区域 */
+.main-content {
+  flex: 1; /* 使内容区域占据剩余空间 */
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
   .main-content {
-    flex: 1; /* 使内容区域占据剩余空间 */
-    padding: 20px;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 15px;
   }
-  
-  /* 响应式设计 */
-  @media (max-width: 768px) {
-    .main-content {
-      padding: 15px;
-    }
-  }
+}
