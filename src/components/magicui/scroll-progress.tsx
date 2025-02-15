@@ -1,17 +1,18 @@
-"use client";
-
 import { cn } from "@/lib/utils";
 import { motion, MotionProps, useScroll } from "motion/react";
 import React from "react";
 interface ScrollProgressProps
-    extends Omit<React.HTMLAttributes<HTMLElement>, keyof MotionProps> {}
+    extends Omit<React.HTMLAttributes<HTMLElement>, keyof MotionProps> {
+    contianerRef?: React.RefObject<null>;
+}
 
 export const ScrollProgress = React.forwardRef<
     HTMLDivElement,
     ScrollProgressProps
->(({ className, ...props }, ref) => {
-    const { scrollYProgress } = useScroll();
-
+>(({ className, contianerRef, ...props }, ref) => {
+    const { scrollYProgress } = useScroll({
+        container: contianerRef || undefined,
+    });
     return (
         <motion.div
             ref={ref}

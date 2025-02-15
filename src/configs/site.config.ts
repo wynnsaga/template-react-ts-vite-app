@@ -2,7 +2,7 @@
 
 // 基础配置
 const basic = {
-    title: "Sea Light", // 网站标题
+    title: "海上灵光", // 网站标题
     description: "我的技术博客", // 网站描述
     abstract: "",
     author: "Wynn", // 作者姓名
@@ -17,14 +17,6 @@ const seo = {
     robots: "index, follow", // 搜索引擎爬虫规则
     googleAnalyticsID: "UA-XXXXX-Y", // Google Analytics跟踪ID
 };
-
-// 网站导航
-const navigation = [
-    { name: "首页", path: "/" },
-    { name: "归档", path: "/archives" },
-    { name: "关于", path: "/about" },
-    { name: "联系", path: "/contact" },
-];
 
 // 社交链接
 const social = {
@@ -41,4 +33,4 @@ const stack = {
     tools: ["Git", "VS Code", "Postman"],
 };
 
-export { basic, seo, navigation, social, stack };
+export { basic, seo, social, stack };

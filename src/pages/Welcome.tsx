@@ -1,6 +1,4 @@
-import { InteractiveHoverButton } from "@/components/magicui/interactive-hover-button";
 import { ShimmerButton } from "@/components/magicui/shimmer-button";
-import { ShinyButton } from "@/components/magicui/shiny-button";
 import { TypewriterEffect } from "@/components/ui/typewriter-effect";
 import { WavyBackground } from "@/components/ui/wavy-background";
 import { NavLink } from "react-router";
@@ -45,7 +43,7 @@ export function Welcome() {
                 </p>
 
                 <div className="mt-12">
-                    <NavLink to={"/home"}>
+                    <NavLink to={"/page"}>
                         <ShimmerButton
                             shimmerColor="#FF6884"
                             shimmerSize="0.1rem"
