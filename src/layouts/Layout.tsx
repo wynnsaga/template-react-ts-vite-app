@@ -16,28 +16,28 @@ export function Layout() {
     const links = [
         {
             label: "主页",
-            href: "/page/home",
+            href: "/home",
             icon: (
                 <IconArmchair2 className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
             ),
         },
         {
             label: "博客",
-            href: "/page/blog",
+            href: "/blog",
             icon: (
                 <IconSparkles className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
             ),
         },
         {
             label: "归档",
-            href: "/page/archive",
+            href: "/archive",
             icon: (
                 <IconArchive className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
             ),
         },
         {
             label: "关于",
-            href: "/page/about",
+            href: "/about",
             icon: (
                 <IconLaurelWreathFilled className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
             ),
@@ -69,7 +69,7 @@ export function Layout() {
                         <SidebarLink
                             link={{
                                 label: basic.author,
-                                href: "/page/my",
+                                href: "/my",
                                 icon: (
                                     <img
                                         src={basic.avatar}

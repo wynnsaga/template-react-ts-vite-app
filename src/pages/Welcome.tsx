@@ -43,7 +43,7 @@ export function Welcome() {
                 </p>
 
                 <div className="mt-12">
-                    <NavLink to={"/page"}>
+                    <NavLink to={"/home"}>
                         <ShimmerButton
                             shimmerColor="#FF6884"
                             shimmerSize="0.1rem"

@@ -1,13 +1,8 @@
-import { Header } from "@/components/skeleton/Header";
-import { Footer } from "@/components/skeleton/Footer";
-
+import { PageLayout } from "@/layouts/PageLayout";
 export function Home() {
     return (
-        <>
-            <div className="h-[5000px]">
-                <Header title="Home"></Header>
-                <Footer></Footer>
-            </div>
-        </>
+        <PageLayout headerTitle="Home">
+            <div className="h-[5000px]">home</div>
+        </PageLayout>
     );
 }

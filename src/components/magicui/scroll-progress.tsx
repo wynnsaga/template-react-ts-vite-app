@@ -1,18 +1,26 @@
 import { cn } from "@/lib/utils";
 import { motion, MotionProps, useScroll } from "motion/react";
-import React from "react";
+import React, { useEffect, useState } from "react";
 interface ScrollProgressProps
     extends Omit<React.HTMLAttributes<HTMLElement>, keyof MotionProps> {
-    contianerRef?: React.RefObject<null>;
+    contianerRef: React.RefObject<null>;
 }
 
 export const ScrollProgress = React.forwardRef<
     HTMLDivElement,
     ScrollProgressProps
 >(({ className, contianerRef, ...props }, ref) => {
-    const { scrollYProgress } = useScroll({
-        container: contianerRef || undefined,
+    const [mounted, setMounted] = useState(false);
+    useEffect(() => {
+        if (contianerRef.current) {
+            setMounted(true);
+        }
     });
+
+    const { scrollYProgress } = useScroll({
+        container: mounted ? contianerRef : undefined,
+    });
+
     return (
         <motion.div
             ref={ref}

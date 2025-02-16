@@ -13,28 +13,47 @@ export function App() {
         <>
             <BrowserRouter>
                 <Routes>
+                    {/* 欢迎页 */}
                     <Route
                         path="/"
                         element={<Welcome></Welcome>}></Route>
+
+                    {/* 页面 */}
                     <Route
-                        path="/page"
-                        element={<Layout></Layout>}>
+                        path="/home"
+                        element={<Layout />}>
                         <Route
-                            path="home"
-                            element={<Home></Home>}></Route>
-                        <Route
-                            path="blog"
-                            element={<Blog></Blog>}></Route>
-                        <Route
-                            path="archive"
-                            element={<Archive></Archive>}></Route>
-                        <Route
-                            path="about"
-                            element={<About></About>}></Route>
+                            index
+                            element={<Home />}
+                        />
                     </Route>
                     <Route
+                        path="/blog"
+                        element={<Layout />}>
+                        <Route
+                            index
+                            element={<Blog />}
+                        />
+                    </Route>
+                    <Route
+                        path="/archive"
+                        element={<Layout></Layout>}>
+                        <Route
+                            index
+                            element={<Archive />}></Route>
+                    </Route>
+                    <Route
+                        path="/about"
+                        element={<Layout></Layout>}>
+                        <Route
+                            index
+                            element={<About />}></Route>
+                    </Route>
+
+                    {/* 错误路由 */}
+                    <Route
                         path="*"
-                        element={<NotFound></NotFound>}></Route>
+                        element={<NotFound />}></Route>
                 </Routes>
             </BrowserRouter>
         </>
