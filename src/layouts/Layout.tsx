@@ -36,8 +36,8 @@ export function Layout() {
             ),
         },
         {
-            label: "欢迎",
-            href: "/",
+            label: "关于",
+            href: "/page/about",
             icon: (
                 <IconLaurelWreathFilled className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
             ),
@@ -69,7 +69,7 @@ export function Layout() {
                         <SidebarLink
                             link={{
                                 label: basic.author,
-                                href: "/page/about",
+                                href: "/page/my",
                                 icon: (
                                     <img
                                         src={basic.avatar}
@@ -101,7 +101,7 @@ export function Layout() {
 export const Logo = () => {
     return (
         <a
-            href="#"
+            href="/"
             className="font-normal flex space-x-2 items-center text-sm text-black py-1 relative z-20">
             <div className="h-5 w-6 bg-black dark:bg-white rounded-br-lg rounded-tr-sm rounded-tl-lg rounded-bl-sm flex-shrink-0" />
             <motion.span
@@ -116,7 +116,7 @@ export const Logo = () => {
 export const LogoIcon = () => {
     return (
         <a
-            href="#"
+            href="/"
             className="font-normal flex space-x-2 items-center text-sm text-black py-1 relative z-20">
             <div className="h-5 w-6 bg-black dark:bg-white rounded-br-lg rounded-tr-sm rounded-tl-lg rounded-bl-sm flex-shrink-0" />
         </a>

@@ -1,8 +1,12 @@
+import { Header } from "@/components/skeleton/Header";
+import { Footer } from "@/components/skeleton/Footer";
+
 export function Home() {
     return (
         <>
             <div className="h-[5000px]">
-                <h1>Home</h1>
+                <Header title="Home"></Header>
+                <Footer></Footer>
             </div>
         </>
     );

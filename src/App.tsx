@@ -6,6 +6,7 @@ import { Blog } from "./pages/Blog";
 import { About } from "./pages/About";
 import { Archive } from "./pages/Archive";
 import { Layout } from "./layouts/Layout";
+import { NotFound } from "./pages/NotFound";
 
 export function App() {
     return (
@@ -31,6 +32,9 @@ export function App() {
                             path="about"
                             element={<About></About>}></Route>
                     </Route>
+                    <Route
+                        path="*"
+                        element={<NotFound></NotFound>}></Route>
                 </Routes>
             </BrowserRouter>
         </>
