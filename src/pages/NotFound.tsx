@@ -29,7 +29,7 @@ export function NotFound() {
                 {/* 返回首页按钮 */}
                 <NavLink
                     to="/" // 替换为你的首页路由
-                    className="inline-block px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition duration-300">
+                    className="inline-block px-6 py-3 bg-black text-white font-semibold rounded-lg shadow-md hover:bg-white hover:text-black transition duration-300">
                     Go Back Home
                 </NavLink>
             </div>

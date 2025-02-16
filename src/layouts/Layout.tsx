@@ -8,9 +8,10 @@ import {
 } from "@tabler/icons-react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
-import { Outlet } from "react-router";
+import { NavLink, Outlet } from "react-router";
 import { basic } from "@/configs/site.config";
 import { ScrollProgress } from "@/components/magicui/scroll-progress";
+import { Logo } from "@/components/skeleton/Logo";
 export function Layout() {
     const scrollRef = useRef(null);
     const links = [
@@ -44,6 +45,7 @@ export function Layout() {
         },
     ];
     const [open, setOpen] = useState(false);
+
     return (
         <div
             className={cn(
@@ -55,7 +57,19 @@ export function Layout() {
                 setOpen={setOpen}>
                 <SidebarBody className="justify-between gap-10">
                     <div className="flex flex-col flex-1 overflow-y-auto overflow-x-hidden">
-                        {open ? <Logo /> : <LogoIcon />}
+                        <SidebarLink
+                            className="flex items-center space-x-2 relative z-20 font-extrabold"
+                            link={{
+                                label: "Sea Light",
+                                href: "/",
+                                icon: (
+                                    <Logo
+                                        height="1.25rem"
+                                        width="1.5rem"></Logo>
+                                ),
+                            }}
+                        />
+
                         <div className="mt-8 flex flex-col gap-2">
                             {links.map((link, idx) => (
                                 <SidebarLink
@@ -97,28 +111,3 @@ export function Layout() {
         </div>
     );
 }
-
-export const Logo = () => {
-    return (
-        <a
-            href="/"
-            className="font-normal flex space-x-2 items-center text-sm text-black py-1 relative z-20">
-            <div className="h-5 w-6 bg-black dark:bg-white rounded-br-lg rounded-tr-sm rounded-tl-lg rounded-bl-sm flex-shrink-0" />
-            <motion.span
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                className="font-medium text-black dark:text-white whitespace-pre">
-                {basic.title}
-            </motion.span>
-        </a>
-    );
-};
-export const LogoIcon = () => {
-    return (
-        <a
-            href="/"
-            className="font-normal flex space-x-2 items-center text-sm text-black py-1 relative z-20">
-            <div className="h-5 w-6 bg-black dark:bg-white rounded-br-lg rounded-tr-sm rounded-tl-lg rounded-bl-sm flex-shrink-0" />
-        </a>
-    );
-};
