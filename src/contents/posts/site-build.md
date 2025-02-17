@@ -42,8 +42,10 @@
 5. Markdown 图片处理
 6. Markdown 代码高亮处理
 7. Markdown 自定义渲染样式
-8. Vercel 部署
-9. 搜索
-10. 评论系统
-11. Next.js 版本
-12. Vue3 版本
+8. 文章路由自动生成
+9. Vercel 部署
+10. 搜索
+
+11. 评论系统
+12. Next.js 版本
+13. Vue3 版本

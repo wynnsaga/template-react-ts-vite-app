@@ -8,7 +8,10 @@ import { Archive } from "./pages/Archive";
 import { Layout } from "./layouts/Layout";
 import { NotFound } from "./pages/NotFound";
 
+import { generatePostRoutes } from "./lib/md-utils";
+
 export function App() {
+    const postSlugs = generatePostRoutes();
     return (
         <>
             <BrowserRouter>
@@ -32,8 +35,13 @@ export function App() {
                         element={<Layout />}>
                         <Route
                             index
-                            element={<Blog />}
-                        />
+                            element={<Blog />}></Route>
+                        {postSlugs.map((slug) => (
+                            <Route
+                                key={slug}
+                                path={`post/${slug}`}
+                                element={<NotFound />}></Route>
+                        ))}
                     </Route>
                     <Route
                         path="/archive"
