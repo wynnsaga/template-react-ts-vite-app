@@ -11,7 +11,7 @@ export function TimelineDemo() {
             content: <div className="h-56 bg-red-300"></div>,
         },
         {
-            title: "2023",
+            title: "2022",
             content: <div className="h-56 bg-red-300"></div>,
         },
         {

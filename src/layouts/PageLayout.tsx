@@ -5,7 +5,7 @@ export function PageLayout({ children, headerTitle }: { children: React.ReactNod
     return (
         <div className="min-h-screen">
             <Header title={headerTitle}></Header>
-            <div className="bg-red-300">{children}</div>
+            <div>{children}</div>
             <Footer></Footer>
         </div>
     );

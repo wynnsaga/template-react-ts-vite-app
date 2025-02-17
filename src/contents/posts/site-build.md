@@ -28,6 +28,7 @@
 
 -   marked
 -   dompurify
+-   gray-matter
 
 6.**AI**
 

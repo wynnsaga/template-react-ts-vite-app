@@ -1,4 +1,3 @@
-import { Logo } from "@/components/skeleton/Logo";
 import { PageLayout } from "@/layouts/PageLayout";
 import { parseMarkdown } from "@/lib/md-utils";
 import { useEffect, useState } from "react";
@@ -18,11 +17,13 @@ export function Home() {
                 import: "default",
                 eager: true, // 同步加载
             });
-            console.log(mdFiles);
             const posts = Object.entries(mdFiles).map(([path, content]) => {
+                const { metadata, body, html } = parseMarkdown(content);
                 return {
                     path,
-                    html: parseMarkdown(content),
+                    metadata,
+                    body,
+                    html,
                 };
             });
             setPosts(posts);
@@ -33,10 +34,8 @@ export function Home() {
     return (
         <PageLayout headerTitle="Home">
             <div className="text-black">
-                <Logo></Logo>
                 <>
                     {posts.map((p) => {
-                        console.log(p);
                         return (
                             <div
                                 key={p.path}
