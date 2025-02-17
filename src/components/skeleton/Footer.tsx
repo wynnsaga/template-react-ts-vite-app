@@ -1,6 +1,6 @@
 export function Footer() {
     return (
-        <footer className="footer">
+        <footer className="bg-red-100">
             {/* 左边：版权信息 */}
             <div className="footer-left">
                 <p>&copy; 2024 My Website. All rights reserved.</p>

@@ -32,7 +32,7 @@ export function Home() {
     }, []);
     return (
         <PageLayout headerTitle="Home">
-            <div className="h-[5000px] text-black">
+            <div className="text-black">
                 <Logo></Logo>
                 <>
                     {posts.map((p) => {
