@@ -7,11 +7,10 @@ import { About } from "./pages/About";
 import { Archive } from "./pages/Archive";
 import { Layout } from "./layouts/Layout";
 import { NotFound } from "./pages/NotFound";
-
-import { generatePostRoutes } from "./lib/md-utils";
+import { loadPosts } from "./lib/post-utils";
 
 export function App() {
-    const postSlugs = generatePostRoutes();
+    const posts = loadPosts();
     return (
         <>
             <BrowserRouter>
@@ -36,10 +35,10 @@ export function App() {
                         <Route
                             index
                             element={<Blog />}></Route>
-                        {postSlugs.map((slug) => (
+                        {posts.map((post) => (
                             <Route
-                                key={slug}
-                                path={`post/${slug}`}
+                                key={post.slug}
+                                path={`post/${post.slug}`}
                                 element={<NotFound />}></Route>
                         ))}
                     </Route>

@@ -1,31 +1,35 @@
-import { marked } from "marked";
+import { marked, Tokens } from "marked";
 import matter from "front-matter";
 import DOMPurify from "dompurify";
+import { PostHeading, PostMetadata } from "@/types/global";
 
-export function generatePostRoutes() {
-    const mdFiles = import.meta.glob("/src/contents/posts/*.md", {
-        query: "?raw",
-        import: "default",
-        eager: true,
-    });
+function extractStructure(content: any) {
+    const { attributes, body } = matter<PostMetadata>(content);
+    const tokens = marked.lexer(body);
+    const headingTokens = tokens.filter(
+        (token): token is Tokens.Heading => token.type === "heading"
+    );
 
-    const slugs = Object.entries(mdFiles).map(([path, _]) => {
-        return path.replace(/\.md$/, "").replace("/src/contents/posts/", "");
-    });
-
-    return slugs;
-}
-
-export function parseMarkdown(content: any) {
-    const { attributes, body } = matter(content);
-
-    const html = marked.parse(body, {
-        async: false,
+    const headings: PostHeading[] = headingTokens.map((heading) => {
+        return {
+            level: heading.depth,
+            text: heading.text,
+        };
     });
 
     return {
         metadata: attributes,
-        body: body,
-        html: DOMPurify.sanitize(html),
+        headings,
+        body,
     };
 }
+
+function convertToHtml(body: string) {
+    // HTML转换结果
+    const html = marked.parse(body, {
+        async: false,
+    });
+    return DOMPurify.sanitize(html);
+}
+
+export { extractStructure, convertToHtml };
