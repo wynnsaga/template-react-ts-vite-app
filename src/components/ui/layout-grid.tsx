@@ -26,7 +26,7 @@ export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
     };
 
     return (
-        <div className="w-full h-full p-10 grid grid-cols-1 md:grid-cols-3 mx-auto gap-4 relative">
+        <div className="w-full h-full px-1 py-10 grid grid-cols-1 md:grid-cols-3 mx-auto gap-4 relative">
             {cards.map((card, i) => (
                 <div
                     key={i}
@@ -62,18 +62,14 @@ export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
 
 const ImageComponent = ({ card }: { card: Card }) => {
     return (
-        <div className="flex">
-            <motion.img
-                layoutId={`image-${card.id}-image`}
-                src={card.thumbnail}
-                height="500"
-                width="500"
-                className={cn("absolute object-cover object-top inset-0 h-full w-full transition duration-200")}
-                alt="thumbnail"
-            />
-
-            <h1 className="z-10 text-white absolute w-full px-2 py-4 bg-[#00000055]">{card.title}</h1>
-        </div>
+        <motion.img
+            layoutId={`image-${card.id}-image`}
+            src={card.thumbnail}
+            height="500"
+            width="500"
+            className={cn("absolute object-cover object-top inset-0 h-full w-full transition duration-200")}
+            alt="thumbnail"
+        />
     );
 };
 

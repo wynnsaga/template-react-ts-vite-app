@@ -1,9 +1,9 @@
 import { NavLink } from "react-router";
-import { InteractiveHoverButton } from "../magicui/interactive-hover-button";
+import { InteractiveHoverButton } from "../buttons/interactive-hover-button";
 
 export function CardDemo() {
     return (
-        <div className="w-2/6 mx-auto">
+        <div className="v-full mx-auto">
             <div className="relative overflow-hidden h-full rounded-2xl transition duration-200 group bg-white hover:shadow-xl border border-zinc-100">
                 <div className="w-full aspect-w-16 aspect-h-10 bg-gray-100 rounded-tr-lg rounded-tl-lg overflow-hidden xl:aspect-w-16 xl:aspect-h-10 relative">
                     <img

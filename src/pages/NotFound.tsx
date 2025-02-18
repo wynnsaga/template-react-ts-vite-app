@@ -22,13 +22,11 @@ export function NotFound() {
 
                 {/* 标题 */}
                 <h1 className="text-6xl font-bold text-gray-800 mb-4">404</h1>
-                <p className="text-xl text-gray-600 mb-8">
-                    Oops! Page not found.
-                </p>
+                <p className="text-xl text-gray-600 mb-8">Oops! Page not found.</p>
 
                 {/* 返回首页按钮 */}
                 <NavLink
-                    to="/" // 替换为你的首页路由
+                    to="/home" // 替换为你的首页路由
                     className="inline-block px-6 py-3 bg-black text-white font-semibold rounded-lg shadow-md hover:bg-white hover:text-black transition duration-300">
                     Go Back Home
                 </NavLink>

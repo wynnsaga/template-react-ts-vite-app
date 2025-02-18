@@ -1,5 +1,6 @@
 export interface PostMetadata {
     title: string;
+    description: string;
     notice?: string;
     image: string;
     date: Date;

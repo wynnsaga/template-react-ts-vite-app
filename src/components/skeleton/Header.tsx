@@ -8,7 +8,7 @@ interface HeaderProps {
 export function Header({ title, className }: HeaderProps) {
     return (
         <header className={cn("text-black ", className)}>
-            <h2>{title}</h2>
+            <h1>{title}</h1>
         </header>
     );
 }

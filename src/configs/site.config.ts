@@ -2,7 +2,7 @@
 
 // 基础配置
 const basic = {
-    title: "海上灵光", // 网站标题
+    title: "Sea Light", // 网站标题
     description: "我的技术博客", // 网站描述
     abstract: "",
     author: "Wynn", // 作者姓名

@@ -1,10 +1,9 @@
 "use client";
-import React, { useState, useRef, useEffect } from "react";
 import { LayoutGrid } from "../ui/layout-grid";
 
 export function LayoutGridDemo() {
     return (
-        <div className="h-screen  w-full ">
+        <div className="h-[90vh] w-full ">
             <LayoutGrid cards={cards} />
         </div>
     );

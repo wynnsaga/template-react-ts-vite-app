@@ -1,39 +1,42 @@
-export function Footer() {
+import { AwsomeFooter } from "@/components/miscs/awsome-footer";
+import { IconBrandGithub, IconBrandTwitter } from "@tabler/icons-react";
+import { Logo } from "./Logo";
+
+function Footer() {
     return (
-        <footer className="bg-red-100">
-            {/* 左边：版权信息 */}
-            <div className="footer-left">
-                <p>&copy; 2024 My Website. All rights reserved.</p>
-            </div>
-
-            {/* 中间：链接 */}
-            <div className="footer-center">
-                <a href="/privacy">Privacy Policy</a>
-                <a href="/terms">Terms of Service</a>
-                <a href="/contact">Contact Us</a>
-            </div>
-
-            {/* 右边：社交媒体图标 */}
-            <div className="footer-right">
-                <a
-                    href="https://facebook.com"
-                    target="_blank"
-                    rel="noopener noreferrer">
-                    <i className="fab fa-facebook"></i>
-                </a>
-                <a
-                    href="https://twitter.com"
-                    target="_blank"
-                    rel="noopener noreferrer">
-                    <i className="fab fa-twitter"></i>
-                </a>
-                <a
-                    href="https://instagram.com"
-                    target="_blank"
-                    rel="noopener noreferrer">
-                    <i className="fab fa-instagram"></i>
-                </a>
-            </div>
-        </footer>
+        <div className="w-full">
+            <AwsomeFooter
+                logo={<Logo />}
+                brandName="Sea Light"
+                socialLinks={[
+                    {
+                        icon: <IconBrandTwitter className="h-5 w-5" />,
+                        href: "https://twitter.com",
+                        label: "Twitter",
+                    },
+                    {
+                        icon: <IconBrandGithub className="h-5 w-5" />,
+                        href: "https://github.com",
+                        label: "GitHub",
+                    },
+                ]}
+                mainLinks={[
+                    { href: "/home", label: "Home" },
+                    { href: "/blog", label: "Blog" },
+                    { href: "/about", label: "About" },
+                    { href: "/contact", label: "Contact" },
+                ]}
+                legalLinks={[
+                    { href: "/privacy", label: "Privacy" },
+                    { href: "/terms", label: "Terms" },
+                ]}
+                copyright={{
+                    text: "© 2024 Sea Light",
+                    license: "All rights reserved",
+                }}
+            />
+        </div>
     );
 }
+
+export { Footer };

@@ -17,9 +17,7 @@ interface SidebarContextProps {
     animate: boolean;
 }
 
-const SidebarContext = createContext<SidebarContextProps | undefined>(
-    undefined
-);
+const SidebarContext = createContext<SidebarContextProps | undefined>(undefined);
 
 export const useSidebar = () => {
     const context = useContext(SidebarContext);
@@ -45,11 +43,7 @@ export const SidebarProvider = ({
     const open = openProp !== undefined ? openProp : openState;
     const setOpen = setOpenProp !== undefined ? setOpenProp : setOpenState;
 
-    return (
-        <SidebarContext.Provider value={{ open, setOpen, animate: animate }}>
-            {children}
-        </SidebarContext.Provider>
-    );
+    return <SidebarContext.Provider value={{ open, setOpen, animate: animate }}>{children}</SidebarContext.Provider>;
 };
 
 export const Sidebar = ({
@@ -82,11 +76,7 @@ export const SidebarBody = (props: React.ComponentProps<typeof motion.div>) => {
     );
 };
 
-export const DesktopSidebar = ({
-    className,
-    children,
-    ...props
-}: React.ComponentProps<typeof motion.div>) => {
+export const DesktopSidebar = ({ className, children, ...props }: React.ComponentProps<typeof motion.div>) => {
     const { open, setOpen, animate } = useSidebar();
     return (
         <>
@@ -107,11 +97,7 @@ export const DesktopSidebar = ({
     );
 };
 
-export const MobileSidebar = ({
-    className,
-    children,
-    ...props
-}: React.ComponentProps<"div">) => {
+export const MobileSidebar = ({ className, children, ...props }: React.ComponentProps<"div">) => {
     const { open, setOpen } = useSidebar();
     return (
         <>
@@ -167,20 +153,13 @@ export const SidebarLink = ({
     return (
         <NavLink
             to={link.href}
-            className={cn(
-                "flex items-center justify-start gap-2  group/sidebar py-2",
-                className
-            )}
+            className={cn("flex items-center justify-start gap-2  group/sidebar py-2", className)}
             {...props}>
             {link.icon}
 
             <motion.span
                 animate={{
-                    display: animate
-                        ? open
-                            ? "inline-block"
-                            : "none"
-                        : "inline-block",
+                    display: animate ? (open ? "inline-block" : "none") : "inline-block",
                     opacity: animate ? (open ? 1 : 0) : 1,
                 }}
                 className="text-neutral-700 dark:text-neutral-200 text-sm group-hover/sidebar:translate-x-1 transition duration-150 whitespace-pre inline-block !p-0 !m-0">

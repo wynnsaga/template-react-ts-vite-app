@@ -1,3 +1,15 @@
+---
+title: "About how to build this site"
+description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum, hic ipsum! Qui dicta debitis aliquid quo molestias explicabo iure!"
+notice: "本文内容为测试内容，仅用来显示Markdown渲染效果，作者不对内容负责"
+image: "https://images.unsplash.com/photo-1590041794748-2d8eb73a571c?q=80&w=3456&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+date: 2020-01-01
+categories: ["Hello, world!"]
+tags: ["markdown"]
+draft: false
+pin: true
+---
+
 # 关于本站点是如何实现的
 
 ## 技术栈列表
@@ -18,6 +30,8 @@
 3.**Animation**
 
 -   motion
+-   embla-carousel-react
+-   embla-carousel-autoplay
 
 4.**Icon**
 

@@ -1,7 +1,6 @@
-import { ShimmerButton } from "@/components/magicui/shimmer-button";
-import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-with-collision";
-import { TypewriterEffect } from "@/components/ui/typewriter-effect";
-import { WavyBackground } from "@/components/ui/wavy-background";
+import { ShimmerButton } from "@/components/buttons/shimmer-button";
+import { BackgroundBeamsWithCollision } from "@/components/backgrounds/background-beams-with-collision";
+import { TypewriterEffect } from "@/components/miscs/typewriter-effect";
 import { NavLink } from "react-router";
 
 export function Welcome() {
