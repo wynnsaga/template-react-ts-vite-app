@@ -3,17 +3,16 @@ import { useEffect, useState } from "react";
 import { marked, Tokens } from "marked";
 import matter from "front-matter";
 
-function useLoadPosts(count: number = 0) {
-    const [posts, setPosts] = useState<Post[]>([]);
-    const [loading, setLoading] = useState<Boolean>(true);
+export function useImportPost({ path }: { path: string | undefined }) {
+    const [post, setPost] = useState<Post>();
 
-    const mdFiles = import.meta.glob<string>("/src/contents/posts/*.md", {
+    console.log(path);
+
+    const mdFiles = import.meta.glob<string>(`/src/contents/posts/${path}.md`, {
         query: "?raw",
         import: "default",
         eager: true,
     });
-
-    console.log("load");
 
     useEffect(() => {
         const localPosts: Post[] = Object.entries(mdFiles).map(([path, content]) => {
@@ -41,15 +40,12 @@ function useLoadPosts(count: number = 0) {
                 body,
             };
         });
-        if (count > 0) {
-            setPosts(localPosts.slice(0, count));
+        if (localPosts.length > 0) {
+            setPost(localPosts[0]);
         } else {
-            setPosts(localPosts);
+            setPost(undefined);
         }
-        setLoading(false);
-    }, [count]);
+    }, [path]);
 
-    return { posts, loading };
+    return post;
 }
-
-export { useLoadPosts };

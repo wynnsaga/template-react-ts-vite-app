@@ -7,10 +7,10 @@ import { About } from "./pages/About";
 import { Archive } from "./pages/Archive";
 import { Layout } from "./layouts/Layout";
 import { NotFound } from "./pages/NotFound";
-import { loadPosts } from "./lib/post-utils";
+import { PostLayout } from "./layouts/PostLayout";
+import { Post } from "./pages/Post";
 
 export function App() {
-    const posts = loadPosts();
     return (
         <>
             <BrowserRouter>
@@ -35,12 +35,13 @@ export function App() {
                         <Route
                             index
                             element={<Blog />}></Route>
-                        {posts.map((post) => (
+                        <Route
+                            path="post/:slug"
+                            element={<PostLayout></PostLayout>}>
                             <Route
-                                key={post.slug}
-                                path={`post/${post.slug}`}
-                                element={<NotFound />}></Route>
-                        ))}
+                                index
+                                element={<Post />}></Route>
+                        </Route>
                     </Route>
                     <Route
                         path="/archive"
