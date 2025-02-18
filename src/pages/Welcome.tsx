@@ -27,7 +27,8 @@ export function Welcome() {
         },
         {
             text: "Possibilities.",
-            className: "text-[#FF6884] text-6xl dark:text-[#FF6884] dark:text-6xl",
+            className:
+                "text-[#FF6884] text-6xl dark:text-[#FF6884] dark:text-6xl",
         },
     ];
 

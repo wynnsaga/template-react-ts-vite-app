@@ -1,6 +1,15 @@
 import { useRef, useState } from "react";
-import { Sidebar, SidebarBody, SidebarLink } from "@/components/skeleton/SideBar";
-import { IconArmchair2, IconSparkles, IconArchive, IconLaurelWreathFilled } from "@tabler/icons-react";
+import {
+    Sidebar,
+    SidebarBody,
+    SidebarLink,
+} from "@/components/skeleton/SideBar";
+import {
+    IconArmchair2,
+    IconSparkles,
+    IconArchive,
+    IconLaurelWreathFilled,
+} from "@tabler/icons-react";
 import { cn } from "@/lib/utils";
 import { Outlet } from "react-router";
 import { basic } from "@/configs/site.config";
@@ -12,22 +21,30 @@ export function Layout() {
         {
             label: "主页",
             href: "/home",
-            icon: <IconArmchair2 className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />,
+            icon: (
+                <IconArmchair2 className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
+            ),
         },
         {
             label: "博客",
             href: "/blog",
-            icon: <IconSparkles className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />,
+            icon: (
+                <IconSparkles className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
+            ),
         },
         {
             label: "归档",
             href: "/archive",
-            icon: <IconArchive className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />,
+            icon: (
+                <IconArchive className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
+            ),
         },
         {
             label: "关于",
             href: "/about",
-            icon: <IconLaurelWreathFilled className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />,
+            icon: (
+                <IconLaurelWreathFilled className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
+            ),
         },
     ];
     const [open, setOpen] = useState(false);

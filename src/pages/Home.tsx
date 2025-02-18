@@ -1,4 +1,3 @@
-import { useLoadPosts } from "@/hooks/useLoadPosts";
 import { PageLayout } from "@/layouts/PageLayout";
 import { ProfileCard } from "@/components/cards/ProfileCard";
 import { LayoutGridDemo } from "@/components/demo/LayoutGridDemo";
@@ -17,9 +16,11 @@ import {
     IconBrandHtml5,
 } from "@tabler/icons-react";
 import { StackLabel } from "@/components/miscs/StatckLabel";
+import { loadPosts } from "@/lib/post-utils";
 
 export function Home() {
-    const { posts } = useLoadPosts(4);
+    const posts = loadPosts(4);
+
     // latest posts
     const slideData = posts.map((post) => {
         return {

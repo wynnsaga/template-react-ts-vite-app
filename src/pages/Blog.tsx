@@ -1,10 +1,9 @@
 import { PostCard } from "@/components/cards/PostCard";
-import { useLoadPosts } from "@/hooks/useLoadPosts";
 import { PageLayout } from "@/layouts/PageLayout";
+import { loadPosts } from "@/lib/post-utils";
 
 export function Blog() {
-    const { posts } = useLoadPosts();
-
+    const posts = loadPosts();
     return (
         <PageLayout headerTitle="Blog">
             <div className="grid grid-cols-1 md:grid-cols-3 2xl:grid-cols-4 gap-4">

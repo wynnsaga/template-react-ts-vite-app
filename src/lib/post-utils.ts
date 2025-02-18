@@ -2,7 +2,6 @@ import { Post } from "@/types/global";
 import { extractStructure } from "./md-utils";
 
 function loadPosts(count: number = 0): Post[] {
-    // 动态导入所有 Markdown 文件
     const mdFiles = import.meta.glob("/src/contents/posts/*.md", {
         query: "?raw",
         import: "default",
@@ -31,4 +30,10 @@ function loadPosts(count: number = 0): Post[] {
     }
 }
 
-export { loadPosts };
+function importPost(slug: string) {
+    const posts = loadPosts();
+    const post = posts.find((p) => p.slug === slug);
+    return post;
+}
+
+export { loadPosts, importPost };
