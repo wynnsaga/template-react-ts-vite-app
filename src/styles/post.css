@@ -1,17 +1,17 @@
-/* 在 CSS 中引入 */
+/* 高亮代码 */
 @import "highlight.js/styles/github.min.css";
 
-[class^="bp-"] {
+.bp {
+    @apply w-full md:w-2/3 mx-auto;
+}
+
+.bp * {
     color: rgb(67 67 67 / var(--tw-text-opacity, 1));
     line-height: 1.5;
     overflow-wrap: break-word;
 }
-.bp {
-    margin: 0 auto;
-    max-width: 60%;
-}
 
-.bp-p {
+.bp p {
     margin: 1rem 0;
 }
 
@@ -23,4 +23,8 @@
     overflow-x: auto;
     font-size: 0.95rem;
     margin: 1rem 0;
+}
+
+.bp code {
+    background-color: transparent;
 }

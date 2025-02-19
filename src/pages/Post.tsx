@@ -32,9 +32,9 @@ export function Post() {
 
     return (
         <div>
-            <div className="w-[60%] h-1/5 rounded-xl shadow-md my-10  overflow-hidden  mx-auto">
-                <img src={post?.metadata.image}></img>
-            </div>
+            <img
+                src={post?.metadata.image}
+                className="w-full md:w-2/3 h-[40%] rounded-xl shadow-md my-10  overflow-hidden  mx-auto"></img>
             <div
                 className="bp"
                 dangerouslySetInnerHTML={{ __html: html }}></div>

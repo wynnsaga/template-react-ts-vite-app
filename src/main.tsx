@@ -12,4 +12,8 @@ document.title = basic.title;
 initMarkedRenders();
 
 // 渲染根组件
-createRoot(document.getElementById("root")!).render(<App></App>);
+createRoot(document.getElementById("root")!).render(
+    <StrictMode>
+        <App></App>
+    </StrictMode>
+);
