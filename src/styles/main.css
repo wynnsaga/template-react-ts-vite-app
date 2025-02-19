@@ -77,3 +77,10 @@
         @apply text-base font-bold mb-4;
     }
 }
+
+/* 全局配置 */
+:root {
+    margin: 0;
+    font-family: Inter, sans-serif;
+    scrollbar-width: thin;
+}

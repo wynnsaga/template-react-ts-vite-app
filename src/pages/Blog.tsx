@@ -6,7 +6,7 @@ export function Blog() {
     const posts = loadPosts();
     return (
         <PageLayout headerTitle="Blog">
-            <div className="grid grid-cols-1 md:grid-cols-3 2xl:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 2xl:grid-cols-4 gap-6">
                 {posts.map((post, index) => {
                     return (
                         <PostCard

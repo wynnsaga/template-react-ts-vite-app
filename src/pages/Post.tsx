@@ -1,9 +1,9 @@
-import { convertToHtml } from "@/lib/md-utils";
+import { parseToHtmlAsync } from "@/lib/md-utils";
 import { importPost } from "@/lib/post-utils";
 import { Post as PostProps } from "@/types/global";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
-import { NotFound } from "./NotFound";
+import "@/styles/post.css";
 
 export function Post() {
     const { slug } = useParams();
@@ -20,18 +20,24 @@ export function Post() {
             return;
         }
 
-        const renderHtml = convertToHtml(post.body);
-        setHtml(renderHtml);
+        parseToHtmlAsync(post.body)
+            .then((value) => {
+                setHtml(value);
+            })
+            .catch((error) => {
+                console.error("Parse Error: ", error);
+                return;
+            });
     }, [slug]);
-
-    if (!post) {
-        return <NotFound></NotFound>;
-    }
 
     return (
         <div>
-            <h1> {post?.metadata.title}</h1>
-            <div dangerouslySetInnerHTML={{ __html: html }}></div>
+            <div className="w-[60%] h-1/5 rounded-xl shadow-md my-10  overflow-hidden  mx-auto">
+                <img src={post?.metadata.image}></img>
+            </div>
+            <div
+                className="bp"
+                dangerouslySetInnerHTML={{ __html: html }}></div>
         </div>
     );
 }

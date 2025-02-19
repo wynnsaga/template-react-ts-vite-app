@@ -1,0 +1,26 @@
+/* 在 CSS 中引入 */
+@import "highlight.js/styles/github.min.css";
+
+[class^="bp-"] {
+    color: rgb(67 67 67 / var(--tw-text-opacity, 1));
+    line-height: 1.5;
+    overflow-wrap: break-word;
+}
+.bp {
+    margin: 0 auto;
+    max-width: 60%;
+}
+
+.bp-p {
+    margin: 1rem 0;
+}
+
+.bp pre {
+    background-color: #f3f4f6;
+    border-radius: 0.45rem;
+    border: 1px #e3e6ed solid;
+    padding: 0.5rem 0.75rem;
+    overflow-x: auto;
+    font-size: 0.95rem;
+    margin: 1rem 0;
+}
